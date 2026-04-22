@@ -1,9 +1,0 @@
-name: EnesRTPZone
-version: 1.0
-main: com.enes.enesrtpzone.EnesRTPZone
-api-version: '1.21'
-folia-supported: true
-commands:
-  rtpzone:
-    description: "RTP Bölge yönetimi komutu"
-    permission: "rtpzone.admin"
