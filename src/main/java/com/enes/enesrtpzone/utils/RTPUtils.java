@@ -51,7 +51,7 @@ public class RTPUtils {
         int x = (random.nextInt(max - min) + min) * (random.nextBoolean() ? 1 : -1);
         int z = (random.nextInt(max - min) + min) * (random.nextBoolean() ? 1 : -1);
 
-        // INSTANT TELEPORT: Schedule teleport immediately without waiting for chunk load
+        
         scheduleTeleport(plugin, player, world, x, z, max, min, attempt);
     }
 
@@ -71,10 +71,10 @@ public class RTPUtils {
             if (execute != null) {
                 execute.invoke(scheduler, plugin, world, x, z, (Runnable) () -> {
                     try {
-                        // Load chunk on region thread
+                        
                         Chunk chunk = world.getChunkAt(x, z);
                         
-                        // Find highest non-air block manually (avoid getHighestBlockYAt which causes async chunk access)
+                        
                         int y = world.getMaxHeight() - 1;
                         Block block = null;
                         Material type = Material.AIR;
@@ -88,25 +88,25 @@ public class RTPUtils {
                             y--;
                         }
                         
-                        // If not safe, just use y+10 to avoid water/lava
+                        
                         if (type == Material.LAVA || type == Material.WATER || type == Material.CACTUS || type == Material.MAGMA_BLOCK || y <= world.getMinHeight() + 5) {
-                            y += 10; // Teleport above dangerous area
+                            y += 10; 
                         }
                         
                         Location loc = new Location(world, x + 0.5, y + 1, z + 0.5);
-                        // Use teleportAsync for Folia
+                        
                         Method teleportAsync = Player.class.getMethod("teleportAsync", Location.class);
                         teleportAsync.invoke(player, loc);
                         player.sendMessage(ColorUtils.format(plugin.getConfig().getString("messages.prefix") + plugin.getConfig().getString("messages.teleporting")));
                         plugin.getLogger().info("SUCCESS: Teleported to " + loc);
                     } catch (Exception teleEx) {
                         plugin.getLogger().severe("Teleport failed: " + teleEx.getMessage());
-                        // Retry on failure
+                        
                         teleportAsyncFolia(plugin, player, world, max, min, attempt + 1);
                     }
                 });
             } else {
-                // Fallback
+                
                 Location loc = new Location(world, x + 0.5, 100, z + 0.5);
                 player.teleport(loc);
             }
@@ -123,7 +123,7 @@ public class RTPUtils {
             try {
                 Chunk chunk = world.getChunkAt(x, z);
 
-                // Find highest non-air block in this chunk column
+                
                 int y = world.getMaxHeight() - 1;
                 Block block = null;
                 Material type = Material.AIR;
