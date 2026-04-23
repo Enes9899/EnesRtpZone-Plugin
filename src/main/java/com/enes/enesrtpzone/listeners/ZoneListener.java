@@ -59,11 +59,11 @@ public class ZoneListener implements Listener {
         boolean isIn = plugin.getZoneManager().isInAnyZone(event.getTo());
 
         if (isIn && !rtpTasks.containsKey(uuid)) {
-            // Start global countdown display for this player
+            
             player.sendMessage(ColorUtils.format(plugin.getConfig().getString("messages.prefix") + plugin.getConfig().getString("messages.entered-zone")));
             startGlobalCountdownDisplay(player);
         } else if (!isIn && rtpTasks.containsKey(uuid)) {
-            // Stop showing countdown but global timer continues
+            
             stopSyncTask(player);
         }
     }
@@ -75,9 +75,9 @@ public class ZoneListener implements Listener {
             int timeLeft = plugin.getGlobalCountdown();
 
             if (timeLeft <= 0) {
-                // Clear title immediately before teleport
+                
                 player.sendTitle("", "", 0, 1, 0);
-                // Only teleport if still in zone
+                
                 if (plugin.getZoneManager().isInAnyZone(player.getLocation())) {
                     RTPUtils.teleportSafely(plugin, player);
                 }
@@ -85,7 +85,7 @@ public class ZoneListener implements Listener {
                 return;
             }
 
-            // Show global countdown title (same for everyone)
+            
             String title = ColorUtils.format(plugin.getConfig().getString("messages.countdown-title").replace("%time%", String.valueOf(timeLeft)));
             String sub = ColorUtils.format(plugin.getConfig().getString("messages.countdown-subtitle"));
             player.sendTitle(title, sub, 0, 25, 0);
