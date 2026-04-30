@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>EnesRtpZone API</name>
-    <description>EnesRtpZone Public API</description>
+    <description>EnesRtpZone</description>
 
     <licenses>
         <license>
