@@ -1,4 +1,4 @@
-**ᴅᴇᴠᴇʟᴏᴘᴇʀ:** Enes  
+**ᴅᴇᴠᴇʟᴏᴘᴇʀ:** Enes9899  
 **ɢɪᴛʜᴜʙ:** https://github.com/Enes9899
 **ᴍᴏᴅʀɪɴᴛʜ** https://modrinth.com/plugin/enesrtpzone
 
