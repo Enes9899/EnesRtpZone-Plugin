@@ -1,7 +1,7 @@
 @echo off
 echo ======================================
 echo  ENESRTPZONE - Multi Platform Builder
-echo  Developer: @enes999
+echo  Developer: @Enes9899
 echo  Platforms: Paper, Folia, Purpur
 echo ======================================
 echo.
