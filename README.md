@@ -1,12 +1,8 @@
 **Developer:** Enes9899  
 **GitHub:** https://github.com/Enes9899  
 **Modrinth:** https://modrinth.com/plugin/enesrtpzone  
-**BuiltByBit:** https://builtbybit.com/resources/enesrtpzone.106025/
+**BuiltByBit:** https://builtbybit.com/resources/enes-rtpzone-plugin.106025/
 
-**Geliştirici:** Enes9899  
-**GitHub:** https://github.com/Enes9899  
-**Modrinth:** https://modrinth.com/plugin/enesrtpzone  
-**BuiltByBit:** https://builtbybit.com/resources/enesrtpzone.106025/
 
 ---
 
